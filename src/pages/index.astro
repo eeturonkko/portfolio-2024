@@ -8,13 +8,36 @@ import symphony from '../assets/symphony.jpg';
 import dailyquote from '../assets/dailyquote.jpg';
 
 const currentYear = new Date().getFullYear();
+
+const projectDetails = [{
+  image: bulkdb,
+  alt: 'bulkdb',
+  title: 'Bulkdb',
+  desc: 'Bulkdb is a way to track my daily weight and my workouts in a simple and easy way.',
+  href: 'https://github.com/eeturonkko/bulkdb'
+},
+{
+  image: symphony,
+  alt: 'symphony',
+  title: 'Symphony',
+  desc: 'Symphony is a web application designed to enhance your Spotify experience.',
+  href: 'https://github.com/eeturonkko/symphony'
+},
+{
+  image: dailyquote,
+  alt: 'dailyquote',
+  title: 'Daily Quote',
+  desc: 'Daily Quote is a web application that provides you with a daily dose of inspiration and motivation.',
+  href: 'https://github.com/eeturonkko/daily-quote'
+}];
+
 ---
 
 <Layout title="Erwd - Fullstack web development ">
   <!-- Hero section-->
   <section
   id="about"
-  class="hidden md:flex flex-col md:flex-row items-center space-y-6 mx-auto bg-gray-800 text-white"
+  class="hidden md:flex flex-col md:flex-row items-center space-y-6 mx-auto bg-slate-900 text-white"
 > 
   <Image
     src={hero}
@@ -22,9 +45,9 @@ const currentYear = new Date().getFullYear();
     class="w-full md:w-1/2 h-auto animate-clip-path-alt"
   />
   <div class="flex flex-col md:w-1/2">
-    <h2 class="text-4xl md:text-6xl font-bold my-4 md:my-8">Hello, my name is Eetu</h2>
-    <p class="text-lg md:text-xl font-semibold">
-      I am a fullstack web developer / Security system specialist.
+    <h2 class="text-4xl md:text-6xl font-bold my-4 md:my-8 ">Hello, my name is Eetu</h2>
+    <p class="text-lg md:text-xl font-semibold typewriter-effect">
+      I am a fullstack web developer / Security system specialist
     </p>
   </div>
 </section>
@@ -34,7 +57,7 @@ const currentYear = new Date().getFullYear();
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
         <h2 class="text-3xl font-bold">My Skills</h2>
-        <p class="text-gray-600 mt-4">A blend of Security Systems Expertise and Full-Stack Web Development</p>
+        <p class="text-gray-600 mt-4 ">A blend of Security Systems Expertise and Full-Stack Web Development</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -110,52 +133,27 @@ const currentYear = new Date().getFullYear();
         <h2 class="text-3xl font-bold">My Projects</h2>
         <p class="text-gray-600 mt-4">A selection of my recent work</p>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project 1 -->
-        <Card
-          image={bulkdb}
-          alt='bulkdb'
-          title="Bulkdb"
-          desc="Bulkdb is a way to track my daily weight and my workouts in a simple and easy way."
-          href="#"
-        />
-
-        <!-- Project 2 -->
-        <Card
-          image={symphony}
-          alt='symphony'
-          title="Symphony"
-          desc="Symphony is a web application designed to enhance your Spotify experience."
-          href="#"
-        />
-
-        <!-- Project 3 -->
-        <Card
-          image={dailyquote}
-          alt='dailyquote'
-          title="Daily Quote"
-          desc="Daily Quote is a web application that provides you with a daily dose of inspiration and motivation."
-          href="#"
-          />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        {projectDetails.map((project) => (
+            <Card {...project} />
+        ))}
     </div>
   </div>
 </section>
 
 
-<footer class="bg-gray-800 text-white py-6">
+<footer class="bg-slate-900 text-white py-6">
   <div class="container mx-auto text-center space-y-4 md:space-y-2">
-    <p>&copy; {currentYear} Erwd</p>
+    <p>&copy; {currentYear} ERWD</p>
   </div>
 </footer>
 </Layout>
 
 <style>
-  section {
+section {
         scroll-margin-top: 90px;
       }
-
-      @keyframes clipPathAnimationAlt {
+@keyframes clipPathAnimationAlt {
   from {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
@@ -163,8 +161,29 @@ const currentYear = new Date().getFullYear();
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
   }
 }
-
 .animate-clip-path-alt {
   animation: clipPathAnimationAlt 0.6s ease-out forwards;
 }
+
+.typewriter-effect {
+  max-width: 56%;
+  border-right: 0.15rem solid #b91c1c;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    blinking 0.8s infinite,
+    typing 1.8s steps(35, end) forwards;
+}
+
+@keyframes blinking {
+  from {border-color: transparent;}
+  50% {border-color: #b91c1c;}
+  to {border-color: transparent;}
+}
+
+@keyframes typing {
+  from {width: 0;}
+  to {width: 100%;}
+}
+
 </style>
