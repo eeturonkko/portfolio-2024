@@ -50,9 +50,26 @@ const projectDetails = [
         Hello, my name is Eetu
       </h2>
       <p class="text-lg md:text-xl font-semibold typewriter-effect">
-        I am a Full Stack Web Developer <span
-          class="text-red-700 ">/</span
-        > Security System Specialist
+        I am a Full Stack Web Developer <span class="text-red-700">/</span> Security
+        System Specialist
+      </p>
+    </div>
+  </section>
+
+  <section
+    id="about-mobile"
+    class="relative flex md:hidden flex-col items-center justify-center text-center text-white"
+  >
+    <Image
+      src={hero}
+      alt="sahko"
+      class="w-full md:w-1/2 h-auto brightness-50"
+    />
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <h2 class="text-3xl font-bold">Hello, my name is Eetu</h2>
+      <p class="text-xs font-semibold typewriter-effect-mobile">
+        I am a Full Stack Web Developer <span class="text-red-700">/</span> Security
+        System Specialist
       </p>
     </div>
   </section>
@@ -341,6 +358,16 @@ const projectDetails = [
 
   .typewriter-effect {
     max-width: 58%;
+    border-right: 0.15rem solid #b91c1c;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+      blinking 0.8s infinite,
+      typing 1.8s steps(35, end) forwards;
+  }
+
+  .typewriter-effect-mobile {
+    max-width: 89%;
     border-right: 0.15rem solid #b91c1c;
     white-space: nowrap;
     overflow: hidden;
