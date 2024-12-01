@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import hero from "../assets/hero.jpg";
+import meal from "../assets/meal.png";
 import bulkdb from "../assets/bulkdb.jpg";
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import symphony from "../assets/symphony.jpg";
-import dailyquote from "../assets/dailyquote.jpg";
+import minicut from "../assets/minicut.jpg";
 
 const currentYear = new Date().getFullYear();
 
@@ -14,22 +14,22 @@ const projectDetails = [
     image: bulkdb,
     alt: "bulkdb",
     title: "Bulkdb",
-    desc: "Bulkdb is a way to track my daily weight and my workouts in a simple and easy way.",
+    desc: "Bulkdb is a way to track my daily weight and my workouts in a simple and easy way. It also includes a dashboard to visualize the data.",
     href: "https://github.com/eeturonkko/bulkdb",
   },
   {
-    image: symphony,
-    alt: "symphony",
-    title: "Symphony",
-    desc: "Symphony is a web application designed to enhance your Spotify experience.",
-    href: "https://github.com/eeturonkko/symphony",
+    image: meal,
+    alt: "meal",
+    title: "Meal Recommendations",
+    desc: "Track meals you have eaten and receive meal recommendations based on meals they haven't had in the past 14 days.",
+    href: "https://github.com/eeturonkko/meal-recommendations",
   },
   {
-    image: dailyquote,
-    alt: "dailyquote",
-    title: "Daily Quote",
-    desc: "Daily Quote is a web application that provides you with a daily dose of inspiration and motivation.",
-    href: "https://github.com/eeturonkko/daily-quote",
+    image: minicut,
+    alt: "Mini cut analysis",
+    title: "Mini cut analysis",
+    desc: "Analysis of my mini cut using data from Bulkdb. Analysis is done with Python and Jupyter Notebook.",
+    href: "https://github.com/eeturonkko/minicut_analysis",
   },
 ];
 ---
